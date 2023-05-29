@@ -9,7 +9,7 @@ import shapely.wkt
 app = Flask(__name__)
 
 # Stringa di connessione al DB
-app.config["MONGO_URI"] = "mongodb+srv://jbiagioni:ab9ksKw0IJJvjlLh@atlascluster.wjczksx.mongodb.net/ReLab" #Importante qui va specificato il nome del DB
+app.config["MONGO_URI"] = "mongodb+srv://jbiagioni:M7JYoNondmtLqBJk@atlascluster.wjczksx.mongodb.net/ReLab" #Importante qui va specificato il nome del DB
 
 mongo = PyMongo(app)
 # Per rispondere alle chiamate cross origin
@@ -83,6 +83,7 @@ def get_all_stars():
         properties={'id':s['_id']['SEZ'], 'media':s['AVG'], 'somma':s['SUM'], 'sezione':s['_id']['SEZ']}) 
         output.append(g2)                 
     return jsonify({'result': output})
+
 # Checks to see if the name of the package is the run as the main package.
 if __name__ == "__main__":
     # Runs the Flask application only if the main.py file is being run.
